@@ -11,20 +11,32 @@ h1, h2 {
   color: #1d3557;
 }
 
+/* Hero Section */
 .hero {
-  background: url('../img/kelas-bg.jpg') no-repeat center center/cover;
+  position: relative;
   height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 2rem;
   text-align: center;
-  color: white;
-  position: relative;
+  overflow: hidden;
 }
 
-.hero .overlay {
-  background-color: rgba(0, 51, 102, 0.6);
-  padding: 2rem;
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  max-width: 800px;
 }
 
 .hero h1 {
@@ -37,11 +49,14 @@ h1, h2 {
   margin: auto;
 }
 
-.buttons {
+/* Tombol */
+.buttons,
+.hero-content div {
   margin-top: 2rem;
 }
 
-.buttons a {
+.buttons a,
+.hero-content a {
   padding: 10px 20px;
   border-radius: 8px;
   margin: 0 10px;
@@ -49,16 +64,19 @@ h1, h2 {
   font-weight: bold;
 }
 
-.buttons a:first-child {
+.buttons a:first-child,
+.hero-content a.btn-outline {
   background-color: #f8f9fa;
   color: #1d3557;
 }
 
-.buttons .btn-secondary {
+.buttons .btn-secondary,
+.hero-content a.btn-primary {
   background-color: #1d3557;
   color: white;
 }
 
+/* Konten Utama */
 main.content {
   padding: 3rem 1rem;
   max-width: 900px;
@@ -74,12 +92,14 @@ section h2 {
   margin-bottom: 1rem;
 }
 
+/* Highlight Box */
 .highlight {
   background-color: #fff7e6;
   padding: 2rem;
   border-radius: 10px;
 }
 
+/* Misi */
 .misi-list {
   list-style: none;
   padding-left: 0;
@@ -89,30 +109,101 @@ section h2 {
   margin: 10px 0;
 }
 
-.anggota-grid {
+/* Anggota */
+.anggota-grid,
+.members-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
+  padding: 0 1rem;
 }
 
-.card {
+.card,
+.member-card {
   background-color: #f1f1f1;
   padding: 1rem;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
 }
 
-.galeri-grid {
+.member-card:hover {
+  transform: translateY(-4px);
+}
+
+.member-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.member-info h3 {
+  margin: 0.5rem 0 0.2rem;
+  font-size: 1.2rem;
+}
+
+.member-role {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #1d3557;
+  margin-bottom: 0.5rem;
+}
+
+.member-quote {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Galeri */
+.galeri-grid,
+.gallery-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   text-align: center;
 }
 
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Footer */
 footer {
   background-color: #f8f9fa;
   text-align: center;
   padding: 2rem 1rem;
   font-size: 0.95rem;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 4rem 1rem 3rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .member-image {
+    height: 160px;
+  }
+
+  .member-info h3 {
+    font-size: 1rem;
+  }
+
+  .member-quote {
+    font-size: 0.85rem;
+  }
 }
