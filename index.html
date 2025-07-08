@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Reguler B 2023</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #6C8AE4;
+            --primary-dark: #3A4D8F;
+            --secondary: #E8C07D;
+            --background: #FAF9F7;
+            --text: #333333;
+            --light-gray: #F0EEEB;
+            --dark-gray: #595959;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(58, 77, 143, 0.7), rgba(108, 138, 228, 0.5));
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            margin: 10px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            color: var(--primary-dark);
+            border: 2px solid var(--secondary);
+        }
+        
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--secondary);
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-dark);
+        }
+        
+        /* About Section */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary-dark);
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-content blockquote {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 20px 0;
+            font-style: italic;
+            color: var(--dark-gray);
+        }
+        
+        /* Vision & Mission */
+        .vision-mission {
+            background-color: var(--light-gray);
+            padding: 80px 0;
+        }
+        
+        .vision-mission-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .vision, .mission {
+            flex: 1;
+            min-width: 300px;
+            margin: 0 20px;
+        }
+        
+        .mission-list {
+            margin-top: 20px;
+        }
+        
+        .mission-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .mission-icon {
+            width: 24px;
+            text-align: center;
+            margin-right: 15px;
+            color: var(--primary);
+        }
+        
+        .mission-icon i {
+            font-size: 1.25rem;
+        }
+        
+        /* Members Section */
+        .members {
+            padding: 80px 0;
+        }
+        
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .member-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .member-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .member-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .member-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .member-info h3 {
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+        
+        .member-role {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .member-quote {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--light-gray);
+            padding: 80px 0;
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 250px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 60px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .vision-mission-content {
+                flex-direction: column;
+            }
+            
+            .vision, .mission {
+                margin: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Hero Section -->
+<section class="hero">
+  <img src="../assets/img/hero.jpg" alt="Sekelompok mahasiswa sedang berdiskusi di kampus dengan latar kampus modern di sore hari"
+    style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-2;">
+  <div class="hero-content">
+    <h1>Selamat datang di ruang digital kami — Kami bukan hanya mahasiswa. Kami juga pekerja, pembelajar, dan pemimpi.</h1>
+    <p>
+      Kelas Sistem Informasi<br>
+      Reguler B | Angkatan 2023
+    </p>
+    <p style="font-style: italic; max-width: 700px; margin: 0 auto 2rem;">
+      Tempat kami tumbuh bersama sebagai pembelajar, berkolaborasi sebagai tim, dan melangkah sebagai calon profesional di era digital.
+    </p>
+    <div>
+      <a href="#about" class="btn btn-outline">Kenali Lebih Dekat</a>
+      <a href="#gallery" class="btn btn-primary">Lihat Galeri</a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Kami, Delapan Individu. Satu Semangat.</h2>
+            <div class="about-content">
+                <blockquote>
+                    Di balik layar tugas, proyek, dan diskusi panjang, kami adalah delapan mahasiswa yang saling melengkapi.
+                </blockquote>
+                <blockquote>
+                    Belajar tidak selalu tentang nilai — kadang tentang proses, kadang tentang saling percaya.
+                </blockquote>
+                <blockquote>
+                    Kami percaya bahwa teknologi adalah sarana, bukan tujuan. Dan kami percaya bahwa perjalanan ini baru saja dimulai.
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section id="vision" class="vision-mission">
+        <div class="container">
+            <h2 class="section-title">Arah Kami</h2>
+            <div class="vision-mission-content">
+                <div class="vision">
+                    <h3>Visi</h3>
+                    <blockquote>
+                        Menjadi pribadi yang siap menghadapi tantangan teknologi dengan etika, kreativitas, dan rasa ingin tahu yang tak pernah padam.
+                    </blockquote>
+                </div>
+                <div class="mission">
+                    <h3>Misi</h3>
+                    <div class="mission-list">
+                        <div class="mission-item">
+                            <div class="mission-icon"><i class="fas fa-seedling"></i></div>
+                            <div>Tumbuh sebagai individu yang open-minded & adaptable</div>
+                        </div>
+                        <div class="mission-item">
+                            <div class="mission-icon"><i class="fas fa-lightbulb"></i></div>
+                            <div>Mendorong ide, bukan hanya menyelesaikan tugas</div>
+                        </div>
+                        <div class="mission-item">
+                            <div class="mission-icon"><i class="fas fa-people-arrows"></i></div>
+                            <div>Merawat solidaritas, bukan sekadar kerja tim</div>
+                        </div>
+                        <div class="mission-item">
+                            <div class="mission-icon"><i class="fas fa-brain"></i></div>
+                            <div>Belajar dengan tujuan, bukan hanya target nilai</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Members Section -->
+  <!-- Anggota Kelas (versi lengkap 8 orang dengan gambar lokal dari folder assets/img/) -->
+<section id="members">
+  <h2 class="section-title">Siapa Kami?</h2>
+  <div class="members-grid">
+    <div class="member-card">
+      <img src="../assets/img/kevin.jpg" alt="Kevin" class="member-image">
+      <div class="member-info">
+        <h3>Kevin</h3>
+        <div class="member-role">Leader</div>
+        <p class="member-quote">"Serius saat perlu, santai saat bisa."</p>
+      </div>
+    </div>
+
+    <div class="member-card">
+      <img src="../assets/img/rian.jpg" alt="Rian" class="member-image">
+      <div class="member-info">
+        <h3>Rian</h3>
+        <div class="member-role">Front-End Dev</div>
+        <p class="member-quote">"Style itu penting, tapi fungsi lebih utama."</p>
+      </div>
+    </div>
+
+    <div class="member-card">
+      <img src="../assets/img/rizal.jpg" alt="Rizal" class="member-image">
+      <div class="member-info">
+        <h3>Rizal</h3>
+        <div class="member-role">Back-End Dev</div>
+        <p class="member-quote">"Kalau error, cari log-nya dulu."</p>
+      </div>
+    </div>
+
+    <div class="member-card">
+      <img src="../assets/img/aldi.jpg" alt="Aldi" class="member-image">
+      <div class="member-info">
+        <h3>Aldi</h3>
+        <div class="member-role">Tester</div>
+        <p class="member-quote">"Aku bukan nyari salahmu, cuma ngetes aja."</p>
+      </div>
+    </div>
+
+    <div class="member-card">
+      <img src="../assets/img/fania.jpg" alt="Fania" class="member-image">
+      <div class="member-info">
+        <h3>Fania</h3>
+        <div class="member-role">UI Designer</div>
+        <p class="member-quote">"Warna pastel adalah identitas."</p>
+      </div>
+    </div>
+
+    <div class="member-card">
+      <img src="../assets/img/afni.jpg" alt="Afni" class="member-image">
+      <div class="member-info">
+        <h3>Afni</h3>
+        <div class="member-role">Content Writer</div>
+        <p class="member-quote">"Kata-kata juga bisa jadi sistem."</p>
+      </div>
+    </div>
+
+    <div class="member-card">
+      <img src="../assets/img/vero.jpg" alt="Vero" class="member-image">
+      <div class="member-info">
+        <h3>Vero</h3>
+        <div class="member-role">Database Admin</div>
+        <p class="member-quote">"SQL bukan sekadar query, tapi seni."</p>
+      </div>
+    </div>
+
+    <div class="member-card">
+      <img src="../assets/img/olivia.jpg" alt="Olivia" class="member-image">
+      <div class="member-info">
+        <h3>Olivia</h3>
+        <div class="member-role">Analyst</div>
+        <p class="member-quote">"Suka data, tapi gak suka drama."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+   <!-- Gallery Section -->
+<section id="gallery" class="gallery">
+  <div class="container">
+    <h2 class="section-title">Cerita Lewat Gambar</h2>
+    <div class="gallery-container">
+      <!-- Photo 1 -->
+      <div class="gallery-item">
+        <img src="../assets/img/gallery1.jpg" alt="Selesai Kelas Pap dulu">
+      </div>
+
+      <!-- Photo 2 -->
+      <div class="gallery-item">
+        <img src="../assets/img/gallery2.jpg" alt="Momen presentasi proyek akhir dengan slide presentasi di latar belakang">
+      </div>
+
+      <!-- Photo 3 -->
+      <div class="gallery-item">
+        <img src="../assets/img/gallery3.jpg" alt="Kegiatan outdoor class di taman kampus dengan suasana rileks">
+      </div>
+
+      <!-- Photo 4 -->
+      <div class="gallery-item">
+        <img src="../assets/img/gallery4.jpg" alt="Close up tangan mengetik kode program di laptop malam hari">
+      </div>
+
+      <!-- Photo 5 -->
+      <div class="gallery-item">
+        <img src="../assets/img/gallery5.jpg" alt="Keluaran print out laporan proyek yang sedang diperiksa bersama">
+      </div>
+
+      <!-- Photo 6 -->
+      <div class="gallery-item">
+        <img src="../assets/img/gallery6.jpg" alt="Break setelah ujian sambil makan siang bersama di kantin kampus">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h2>Terima kasih sudah mampir.</h2>
+                <blockquote style="color: rgba(255,255,255,0.9);">
+                    "Kesibukan bukan alasan untuk berhenti belajar. Justru di sanalah karakter kami dibentuk."
+                </blockquote>
+                
+                <div class="footer-links">
+                    <a href="#">Universitas Lancang Kuning</a>
+                    <a href="mailto:sisteminformasiregb46@gmail.com">sisteminformasiregb46@gmail.com</a>
+                    <a href="https://instagram.com" target="_blank">@INFORMATIONSYSTEM16</a>
+                </div>
+                
+                <p class="copyright">
+                    © 2023 Sistem Informasi Reguler B Angkatan 2023. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+  <!-- SoundCloud Audio Fixed Bottom Left -->
+  <div class="audio-widget">
+    <iframe width="100%" height="80" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2042878888&color=%23242424&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+  </div>
+</body>
+</html>
