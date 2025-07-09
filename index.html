@@ -13,13 +13,13 @@
     
     <style>
         :root {
-            --primary: #6C8AE4;
-            --primary-dark: #3A4D8F;
-            --secondary: #E8C07D;
-            --background: #FAF9F7;
+            --primary: #4A90E2;
+            --primary-dark: #003366;
+            --secondary: #F5A623;
+            --background: #F7F9FC;
             --text: #333333;
-            --light-gray: #F0EEEB;
-            --dark-gray: #595959;
+            --light-gray: #EAEAEA;
+            --dark-gray: #555555;
         }
         
         * {
@@ -50,29 +50,18 @@
         .hero {
             position: relative;
             height: 100vh;
-            min-height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
             overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(58, 77, 143, 0.7), rgba(108, 138, 228, 0.5));
-            z-index: -1;
+            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(74, 144, 226, 0.5)), url('../assets/img/hero.jpg') no-repeat center center/cover;
         }
         
         .hero-content {
             max-width: 800px;
-            padding: 0 20px;
+            padding: 20px;
         }
         
         .hero h1 {
@@ -95,12 +84,13 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
         
         .btn-primary {
             background-color: var(--secondary);
-            color: var(--primary-dark);
-            border: 2px solid var(--secondary);
+            color: white;
         }
         
         .btn-outline {
@@ -109,8 +99,7 @@
         }
         
         .btn-primary:hover {
-            background-color: transparent;
-            color: var(--secondary);
+            background-color: var(--primary-dark);
         }
         
         .btn-outline:hover {
@@ -118,7 +107,7 @@
             color: var(--primary-dark);
         }
         
-        /* About Section */
+        /* Section Styles */
         .section {
             padding: 80px 0;
         }
@@ -127,6 +116,7 @@
             text-align: center;
             margin-bottom: 60px;
             color: var(--primary-dark);
+            font-size: 2.5rem;
         }
         
         .about-content {
@@ -202,6 +192,7 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            text-align: center;
         }
         
         .member-card:hover {
@@ -216,7 +207,6 @@
         
         .member-info {
             padding: 20px;
-            text-align: center;
         }
         
         .member-info h3 {
@@ -322,16 +312,14 @@
 <body>
 <!-- Hero Section -->
 <section class="hero">
-  <img src="../assets/img/hero.jpg" alt="Sekelompok mahasiswa sedang berdiskusi di kampus dengan latar kampus modern di sore hari"
-    style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-2;">
   <div class="hero-content">
-    <h1>Selamat datang di ruang digital kami — Kami bukan hanya mahasiswa. Kami juga pekerja, pembelajar, dan pemimpi.</h1>
+    <h1>Selamat datang di ruang digital kami</h1>
     <p>
       Kelas Sistem Informasi<br>
       Reguler B | Angkatan 2023
     </p>
     <p style="font-style: italic; max-width: 700px; margin: 0 auto 2rem;">
-      Tempat kami tumbuh bersama sebagai pembelajar, berkolaborasi sebagai tim, dan melangkah sebagai calon profesional di era digital.
+      Kami adalah mahasiswa yang berkomitmen untuk belajar dan bekerja, mengembangkan diri di dunia digital.
     </p>
     <div>
       <a href="#about" class="btn btn-outline">Kenali Lebih Dekat</a>
@@ -340,63 +328,61 @@
   </div>
 </section>
 
+<!-- About Section -->
+<section id="about" class="section">
+    <div class="container">
+        <h2 class="section-title">Kami, Delapan Individu. Satu Semangat.</h2>
+        <div class="about-content">
+            <blockquote>
+                Di balik layar tugas, proyek, dan diskusi panjang, kami adalah delapan mahasiswa yang saling melengkapi, berjuang untuk mencapai impian sambil menjalani kehidupan profesional.
+            </blockquote>
+            <blockquote>
+                Belajar tidak hanya tentang nilai — ini adalah tentang pengalaman, kolaborasi, dan membangun jaringan yang kuat di dunia kerja.
+            </blockquote>
+            <blockquote>
+                Kami percaya bahwa teknologi adalah alat untuk menciptakan perubahan, dan kami berkomitmen untuk memanfaatkan setiap kesempatan untuk tumbuh dan berkembang.
+            </blockquote>
+        </div>
+    </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">Kami, Delapan Individu. Satu Semangat.</h2>
-            <div class="about-content">
+<!-- Vision & Mission Section -->
+<section id="vision" class="vision-mission">
+    <div class="container">
+        <h2 class="section-title">Arah Kami</h2>
+        <div class="vision-mission-content">
+            <div class="vision">
+                <h3>Visi</h3>
                 <blockquote>
-                    Di balik layar tugas, proyek, dan diskusi panjang, kami adalah delapan mahasiswa yang saling melengkapi.
-                </blockquote>
-                <blockquote>
-                    Belajar tidak selalu tentang nilai — kadang tentang proses, kadang tentang saling percaya.
-                </blockquote>
-                <blockquote>
-                    Kami percaya bahwa teknologi adalah sarana, bukan tujuan. Dan kami percaya bahwa perjalanan ini baru saja dimulai.
+                    Menjadi profesional yang siap menghadapi tantangan teknologi dengan etika, kreativitas, dan rasa ingin tahu yang tak pernah padam.
                 </blockquote>
             </div>
-        </div>
-    </section>
-
-    <!-- Vision & Mission Section -->
-    <section id="vision" class="vision-mission">
-        <div class="container">
-            <h2 class="section-title">Arah Kami</h2>
-            <div class="vision-mission-content">
-                <div class="vision">
-                    <h3>Visi</h3>
-                    <blockquote>
-                        Menjadi pribadi yang siap menghadapi tantangan teknologi dengan etika, kreativitas, dan rasa ingin tahu yang tak pernah padam.
-                    </blockquote>
-                </div>
-                <div class="mission">
-                    <h3>Misi</h3>
-                    <div class="mission-list">
-                        <div class="mission-item">
-                            <div class="mission-icon"><i class="fas fa-seedling"></i></div>
-                            <div>Tumbuh sebagai individu yang open-minded & adaptable</div>
-                        </div>
-                        <div class="mission-item">
-                            <div class="mission-icon"><i class="fas fa-lightbulb"></i></div>
-                            <div>Mendorong ide, bukan hanya menyelesaikan tugas</div>
-                        </div>
-                        <div class="mission-item">
-                            <div class="mission-icon"><i class="fas fa-people-arrows"></i></div>
-                            <div>Merawat solidaritas, bukan sekadar kerja tim</div>
-                        </div>
-                        <div class="mission-item">
-                            <div class="mission-icon"><i class="fas fa-brain"></i></div>
-                            <div>Belajar dengan tujuan, bukan hanya target nilai</div>
-                        </div>
+            <div class="mission">
+                <h3>Misi</h3>
+                <div class="mission-list">
+                    <div class="mission-item">
+                        <div class="mission-icon"><i class="fas fa-seedling"></i></div>
+                        <div>Tumbuh sebagai individu yang open-minded & adaptable</div>
+                    </div>
+                    <div class="mission-item">
+                        <div class="mission-icon"><i class="fas fa-lightbulb"></i></div>
+                        <div>Mendorong ide, bukan hanya menyelesaikan tugas</div>
+                    </div>
+                    <div class="mission-item">
+                        <div class="mission-icon"><i class="fas fa-people-arrows"></i></div>
+                        <div>Merawat solidaritas, bukan sekadar kerja tim</div>
+                    </div>
+                    <div class="mission-item">
+                        <div class="mission-icon"><i class="fas fa-brain"></i></div>
+                        <div>Belajar dengan tujuan, bukan hanya target nilai</div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Members Section -->
-  <!-- Anggota Kelas (versi lengkap 8 orang dengan gambar lokal dari folder assets/img/) -->
+<!-- Members Section -->
 <section id="members">
   <h2 class="section-title">Siapa Kami?</h2>
   <div class="members-grid">
@@ -405,7 +391,7 @@
       <div class="member-info">
         <h3>Kevin</h3>
         <div class="member-role">Leader</div>
-        <p class="member-quote">"Serius saat perlu, santai saat bisa."</p>
+        <p class="member-quote">"Mengatur waktu adalah kunci, serius saat perlu, santai saat bisa."</p>
       </div>
     </div>
 
@@ -414,7 +400,7 @@
       <div class="member-info">
         <h3>Rian</h3>
         <div class="member-role">Front-End Dev</div>
-        <p class="member-quote">"Style itu penting, tapi fungsi lebih utama."</p>
+        <p class="member-quote">"Desain yang baik harus fungsional, dan fungsionalitas harus menarik."</p>
       </div>
     </div>
 
@@ -423,7 +409,7 @@
       <div class="member-info">
         <h3>Rizal</h3>
         <div class="member-role">Back-End Dev</div>
-        <p class="member-quote">"Kalau error, cari log-nya dulu."</p>
+        <p class="member-quote">"Setiap error adalah kesempatan untuk belajar dan berkembang."</p>
       </div>
     </div>
 
@@ -432,7 +418,7 @@
       <div class="member-info">
         <h3>Aldi</h3>
         <div class="member-role">Tester</div>
-        <p class="member-quote">"Aku bukan nyari salahmu, cuma ngetes aja."</p>
+        <p class="member-quote">"Uji coba adalah bagian dari proses, bukan akhir dari perjalanan."</p>
       </div>
     </div>
 
@@ -441,7 +427,7 @@
       <div class="member-info">
         <h3>Fania</h3>
         <div class="member-role">UI Designer</div>
-        <p class="member-quote">"Warna pastel adalah identitas."</p>
+        <p class="member-quote">"Desain yang baik adalah jembatan antara pengguna dan teknologi."</p>
       </div>
     </div>
 
@@ -450,7 +436,7 @@
       <div class="member-info">
         <h3>Afni</h3>
         <div class="member-role">Content Writer</div>
-        <p class="member-quote">"Kata-kata juga bisa jadi sistem."</p>
+        <p class="member-quote">"Kata-kata memiliki kekuatan untuk menginspirasi dan memotivasi."</p>
       </div>
     </div>
 
@@ -459,7 +445,7 @@
       <div class="member-info">
         <h3>Vero</h3>
         <div class="member-role">Database Admin</div>
-        <p class="member-quote">"SQL bukan sekadar query, tapi seni."</p>
+        <p class="member-quote">"Data adalah aset berharga yang harus dikelola dengan baik."</p>
       </div>
     </div>
 
@@ -468,15 +454,13 @@
       <div class="member-info">
         <h3>Olivia</h3>
         <div class="member-role">Analyst</div>
-        <p class="member-quote">"Suka data, tapi gak suka drama."</p>
+        <p class="member-quote">"Analisis yang baik adalah dasar untuk keputusan yang tepat."</p>
       </div>
     </div>
   </div>
 </section>
 
-
-
-   <!-- Gallery Section -->
+<!-- Gallery Section -->
 <section id="gallery" class="gallery">
   <div class="container">
     <h2 class="section-title">Cerita Lewat Gambar</h2>
@@ -514,34 +498,31 @@
   </div>
 </section>
 
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <h2>Terima kasih sudah mampir.</h2>
-                <blockquote style="color: rgba(255,255,255,0.9);">
-                    "Kesibukan bukan alasan untuk berhenti belajar. Justru di sanalah karakter kami dibentuk."
-                </blockquote>
-                
-                <div class="footer-links">
-                    <a href="#">Universitas Lancang Kuning</a>
-                    <a href="mailto:sisteminformasiregb46@gmail.com">sisteminformasiregb46@gmail.com</a>
-                    <a href="https://instagram.com" target="_blank">@INFORMATIONSYSTEM16</a>
-                </div>
-                
-                <p class="copyright">
-                    © 2023 Sistem Informasi Reguler B Angkatan 2023. All Rights Reserved.
-                </p>
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <h2>Terima kasih sudah mampir.</h2>
+            <blockquote style="color: rgba(255,255,255,0.9);">
+                "Kesibukan bukan alasan untuk berhenti belajar. Justru di sanalah karakter kami dibentuk."
+            </blockquote>
+            
+            <div class="footer-links">
+                <a href="#">Universitas Lancang Kuning</a>
+                <a href="mailto:sisteminformasiregb46@gmail.com">sisteminformasiregb46@gmail.com</a>
+                <a href="https://instagram.com" target="_blank">@INFORMATIONSYSTEM16</a>
             </div>
+            
+            <p class="copyright">
+                © 2023 Sistem Informasi Reguler B Angkatan 2023. All Rights Reserved.
+            </p>
         </div>
-    </footer>
-</body>
-</html>
+    </div>
+</footer>
 
-  <!-- SoundCloud Audio Fixed Bottom Left -->
-  <div class="audio-widget">
+<!-- SoundCloud Audio Fixed Bottom Left -->
+<div class="audio-widget">
     <iframe width="100%" height="80" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2042878888&color=%23242424&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-  </div>
+</div>
 </body>
 </html>
